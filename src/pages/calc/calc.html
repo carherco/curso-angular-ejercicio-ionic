@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Calculadora</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Número 1</ion-label>
+      <ion-input type="number" [(ngModel)]="val1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Número 2</ion-label>
+      <ion-input type="number" [(ngModel)]="val2"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+
+  <ion-list>
+
+    <ion-item>
+      Suma: {{val1 + val2}}
+    </ion-item>
+
+    <ion-item>
+      Resta: {{val1 - val2}}
+    </ion-item>
+
+    <ion-item>
+      Producto: {{val1 * val2}}
+    </ion-item>
+
+  </ion-list>
+
+
+  <button ion-button full (click)="reset()">Reset</button>
+
+
+</ion-content>

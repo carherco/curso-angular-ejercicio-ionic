@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Listado
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Listado de héroes</ion-list-header>
+
+  <ion-item-sliding *ngFor="let heroe of heroes">
+    <ion-item>
+
+      <h2>{{heroe.name}}</h2>
+      <p>{{heroe.emotion}}</p>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="secondary">
+        <ion-icon name="call"></ion-icon>
+        Llamar
+      </button>
+      <button ion-button color="primary">
+        <ion-icon name="mail"></ion-icon>
+        Email
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  </ion-list>
+</ion-content>

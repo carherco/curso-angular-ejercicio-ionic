@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Galería
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-card>
+  <img [src]="imagen_actual"/>
+  <ion-card-content>
+    <!-- Float the icon left -->
+    <button ion-button icon-left (click)="anterior()"
+  [disabled]="indice <= 0">
+      <ion-icon name="arrow-back"></ion-icon>
+      Anterior
+    </button>
+
+    <!-- Float the icon right -->
+    <button ion-button icon-right (click)="siguiente()"
+  [disabled]="indice >= imagenes.length - 1">
+      Siguiente
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-card-content>
+</ion-card>
+
+
+
+
+<div>
+
+  <span>Anterior</span>
+  <img *ngFor="let imagen of imagenes | slice:paginador_ini:paginador_fin; let i=index" [src]="imagen"
+       width="80" class="img_peq" (click)="seleccionar(i)">
+  <span (click)=siguientePagina()>Siguiente</span>
+
+</div>
+
+</ion-content>
